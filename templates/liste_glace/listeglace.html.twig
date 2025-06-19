@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ListeGlaceController!{% endblock %}
 
 {% block main %}
+<div class="container flex">
 {% for glace in glaces %}
-    <h2>{{ glace.nom }}</h2>
+        <div class="card">
+            <h2>{{ glace.nom }}</h2>
+        </div>
     {% endfor %}
+</div>
 {% endblock %}

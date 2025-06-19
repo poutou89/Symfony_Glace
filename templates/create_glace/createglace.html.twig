@@ -3,8 +3,12 @@
 {% block title %}Hello CreateGlaceController!{% endblock %}
 
 {% block main %}
-{{form_start(Glaceform)}}
-    {{form_widget(Glaceform)}}
-    <button>Ajouter</button>
-{{form_end(Glaceform)}}
+    <div class="container">
+        <div class="form-add">
+            {{form_start(Glaceform)}}
+                {{form_widget(Glaceform)}}
+                <button>Ajouter</button>
+            {{form_end(Glaceform)}}
+        </div>
+    </div>
 {% endblock %}
