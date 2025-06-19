@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListeGlaceController!{% endblock %}
+
+{% block main %}
+{% for glace in glaces %}
+    <h2>{{ glace.nom }}</h2>
+    {% endfor %}
+{% endblock %}
