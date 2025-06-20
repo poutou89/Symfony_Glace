@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ModifierglaceController!{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="form-add">
+            {{form_start(Glaceform)}}
+                {{form_widget(Glaceform)}}
+                <button>Ajouter</button>
+            {{form_end(Glaceform)}}
+        </div>
+    </div>
+{% endblock %}

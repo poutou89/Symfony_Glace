@@ -5,7 +5,25 @@
 <div class="container flex">
 {% for glace in glaces %}
         <div class="card">
-            <h2>{{ glace.nom }}</h2>
+            <h2>Goût : {{ glace.nom }}</h2>
+            <h3>Supplément : {{ glace.Supp }}</h3>
+            <h4>Cornet : {{ glace.cornet.nom }}</h4>
+            <h4>Toppings :</h4>
+                <ul>
+                    {% for topping in glace.toppings %}
+                        <li>{{ topping.nom }}</li>
+                    {% else %}
+                        <li>Aucun topping</li>
+                    {% endfor %}
+                </ul>
+            
+            <a href="{{ path('app_modifierglace', { id: glace.id }) }}">Modifier</a>
+            
+            <form method="POST" onsubmit="return confirm('confirmer la suppression ?')" action="{{path('app_deleteglace', {'id': glace.id}) }}">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ glace.id)}}">
+                <input id="delete" type="submit" value="Supprimer">
+            </form>
         </div>
     {% endfor %}
 </div>
