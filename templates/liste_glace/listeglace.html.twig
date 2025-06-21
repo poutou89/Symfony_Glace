@@ -16,7 +16,9 @@
                         <li>Aucun topping</li>
                     {% endfor %}
                 </ul>
-            
+                {% if glace.imageName %}
+                    <img src="{{ asset('uploads/images/' ~ glace.imageName) }}" alt="Image de la glace" style="max-width: 200px;">
+                {% endif %} <br>
             <a href="{{ path('app_modifierglace', { id: glace.id }) }}">Modifier</a>
             
             <form method="POST" onsubmit="return confirm('confirmer la suppression ?')" action="{{path('app_deleteglace', {'id': glace.id}) }}">
