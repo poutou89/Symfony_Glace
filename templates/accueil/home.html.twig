@@ -2,6 +2,32 @@
 
 {% block title %}Hello AccueilController!{% endblock %}
 
-{% block body %}
+{% block main %}
+    <h1>Calculateur de pourcentage</h1>
 
+{# <form method="get">
+    <label for="number">Valeur :</label>
+    <input type="number" step="any" name="number" id="number">
+
+    <label for="percentage">% :</label>
+    <input type="number" step="any" name="percentage" id="percentage">
+
+    <button type="submit">Calculer</button>
+</form>
+
+{% if result is defined %}
+    <h2>Résultat</h2>
+    <p><strong>Valeur calculée :</strong> {{ result.result }}</p>
+    <p><strong>Label :</strong> {{ result.label }}</p>
+{% endif %} #}
+
+<form method="get">
+    <input type="number" name="amount" step="any" placeholder="Montant en €" required>
+    <input type="number" name="rate" step="any" placeholder="Taux (€ → $)" required>
+    <button type="submit">Convertir</button>
+</form>
+
+{% if conversion is defined %}
+    <p>Résultat en dollars : {{ conversion.amountInDollar|number_format(2, ',', ' ') }}</p>
+{% endif %}
 {% endblock %}
